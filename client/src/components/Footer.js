@@ -14,7 +14,14 @@ function Footer() {
         <FacebookIcon />
         <LinkedInIcon />
       </div>
+      
+      
+      <a href="https://tiermaker.com/create/jdm-cars-42192">Create your own JDM Tier List Here :
+      JDM CARS Tier List Maker
+</a>
+
       <p> &copy; Dante's JDM List.com</p>
+
       <p> Gmail: shadlybenhajel@gmail.com</p>
     </div>
   );

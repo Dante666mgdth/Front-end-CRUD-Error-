@@ -57,10 +57,15 @@ function Experience() {
           improvments will come up soon. 
           </h3>
           
+
+
+          
           
           
         </VerticalTimelineElement>
       </VerticalTimeline>
+
+      
      
     </div>
   );

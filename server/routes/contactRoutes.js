@@ -1,15 +1,14 @@
 const express = require("express");
 const router = express.Router();
-
 const controllers = require("../Controllers/contactControllers");
 const Contact = require("../model/Contact");
 
-//test Routing
+// test routing
 router.get("/hello",(req,res)=>{
     res.send("hello routing")
 })
 
-// post Contact 
+// post contact 
 router.post("/addContact",controllers.postContact)
 
 router.get('/',async(req,res)=>{
@@ -21,8 +20,8 @@ router.get('/',async(req,res)=>{
     }
 })
 
-//get One Contact With ID
-//Get Method 
+// get One Contact With ID
+// Get Method 
 // url : http://localhost:4000/api/contact/:id
 // params id
 
@@ -35,8 +34,8 @@ router.get('/:id',async (req, res)=>{
     }
 })
 
-//Delete Contact with ID
-//delete Method 
+// delete contact with ID
+// delete Method 
 // url : http://localhost:4000/api/contact/:id
 // params id
 
@@ -50,8 +49,8 @@ router.delete("/:id", async (req,res)=>{
     }
 })
 
-//Update Contact with ID
-//put Method 
+// update Contact with ID
+// put Method 
 // url : http://localhost:4000/api/contact/:id
 // params id
 

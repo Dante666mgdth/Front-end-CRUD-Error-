@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home";
 import Projects from "./pages/Projects";
 import Experience from "./pages/Experience";
@@ -7,7 +7,14 @@ import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import ProjectDisplay from "./pages/ProjectDisplay";
 import React, { useState, useEffect } from "react";
-import LoginForm from "./components/LoginForm";
+import LoginForm from "./components2/LoginForm";
+//import { Home } from "./components2/Home";
+import { AddUser } from "./components2/AddUser";
+import { EditUser } from "./components2/EditUser";
+import { GlobalProvider } from "./context/GlobalState";
+
+
+import "bootstrap/dist/css/bootstrap.min.css";
 
 
 function App() {
@@ -75,6 +82,23 @@ const Logout = () => {
       
     </div>
   );
+}
+
+const App = () => {
+  return (
+    <div style={{ maxWidth: "30rem", margin: "4rem auto" }}>
+      <GlobalProvider>
+        <Router>
+          <Switch>
+            {/* <Route exact path="/" component={() => <Home users={users} setUsers={setUsers} />} /> */}
+            
+            <Route path="/add" component={AddUser} />
+            <Route path="/edit/:id" component={EditUser} />
+          </Switch>
+        </Router>
+      </GlobalProvider>
+    </div>
+  )
 }
 
 export default App;

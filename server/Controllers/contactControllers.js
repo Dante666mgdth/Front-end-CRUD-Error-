@@ -4,18 +4,18 @@ exports.postContact = async (req,res)=>{
     try {
         // create a new Contact with the model Contact
         const newContact = new Contact(req.body);
-        //test if user has an email
+        // test if user has an email
         if(!req.body.email){
-            res.status(400).send({message:"email is required ...."})
+            res.status(400).send({message:"email is required..."})
             return
         }
         // test if the email is already used 
         const user = await Contact.findOne({email:req.body.email});
         if(user){
-            res.status(400).send({message:"user already exist ... should be unique"})
+            res.status(400).send({message:"user already exist...should be unique"})
             return
         }
-        //save the contact 
+        // save the contact 
         const response = await newContact.save();
         res.status(201).send({message:"user is saved" , response:response})
     } catch (error) {
